@@ -25,10 +25,10 @@ const HeroScreen = () => {
   return (
     <section className="d-flex justify-content-space-between">
       <Figure>
-        <Image src={imagePath} alt={superhero} thumbnail />
+        <Image src={imagePath} alt={superhero} thumbnail className="animate__animated animate__fadeInLeft" />
       </Figure>
       <article>
-        <Card>
+        <Card className="animate__animated animate__fadeIn">
           <Card.Body>
             <Card.Title variant="h3">{superhero}</Card.Title>
             <ListGroup>
