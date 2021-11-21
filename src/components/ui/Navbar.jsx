@@ -1,11 +1,15 @@
-import Button from "@restart/ui/esm/Button";
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+
+import Button from "@restart/ui/esm/Button";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
+  const navigate = useNavigate();
+
   const handleLogout = () => {
-    // to do: Por hacer
-    console.log("logout");
+    navigate("/login", {
+      replace: true,
+    });
   };
 
   return (
@@ -20,7 +24,6 @@ export const Navbar = () => {
             className={({ isActive }) =>
               "nav-item nav-link " + (isActive ? "active" : "")
             }
-            exact
             to="/marvel"
           >
             Marvel
@@ -30,7 +33,6 @@ export const Navbar = () => {
             className={({ isActive }) =>
               "nav-item nav-link " + (isActive ? "active" : "")
             }
-            exact
             to="/dc"
           >
             DC

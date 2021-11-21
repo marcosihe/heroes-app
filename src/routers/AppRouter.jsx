@@ -2,7 +2,6 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
 import React from "react";
 import LoginScreen from "../components/login/LoginScreen";
-import { Navbar } from "../components/ui/Navbar";
 import DashboardRoutes from "./DashboardRoutes";
 
 const AppRouter = () => {
