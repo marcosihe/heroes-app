@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Card, Figure, Image, ListGroup, Button } from "react-bootstrap";
+import { Card, Image, ListGroup, Button } from "react-bootstrap";
 import { useParams, Navigate, useNavigate } from "react-router-dom";
 import { getHeroById } from "../../selectors/getHeroById";
 
@@ -23,12 +23,12 @@ const HeroScreen = () => {
   };
 
   return (
-    <section className="d-flex justify-content-space-between">
-      <Figure>
-        <Image src={imagePath} alt={superhero} thumbnail className="animate__animated animate__fadeInLeft" />
-      </Figure>
+    <section className="d-flex mt-5 container">
+      <figure>
+        <Image src={imagePath} alt={superhero} thumbnail className="animate__animated animate__fadeInLeft w-50" />
+      </figure>
       <article>
-        <Card className="animate__animated animate__fadeIn">
+        <Card className="animate__animated animate__fadeIn mb-3">
           <Card.Body>
             <Card.Title variant="h3">{superhero}</Card.Title>
             <ListGroup>

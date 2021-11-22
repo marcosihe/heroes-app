@@ -13,8 +13,8 @@ const HeroCard = ({
   const imagePath = `${process.env.PUBLIC_URL}/assets/${id}.jpg`;
 
   return (
-    <Col>
-      <Card>
+    <Col className="animate__animated animate__fadeIn" >
+      <Card className="d-flex">
         <Card.Img vartiant="top" src={imagePath} alt={superhero} />
         <Card.Body>
           <Card.Title>{superhero}</Card.Title>
