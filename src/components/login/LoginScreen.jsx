@@ -1,26 +1,36 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import Button from "@restart/ui/esm/Button";
+import { useContext } from "react";
+import { AuthContext } from "../../auth/authContext";
+import { types } from "../../types/types";
 
 const LoginScreen = () => {
+  const navigate = useNavigate();
+  const { dispatch } = useContext(AuthContext);
 
-    const navigate = useNavigate()
+  const handleLogin = () => {
+    const action = {
+      type: types.login,
+      payload: { name: "Marcos" },
+    };
 
-    const handleLogin = () => {
-        navigate('/marvel', {
-            replace: true
-        });
-    }
+    dispatch(action);
 
-    return (
-        <div className="container mt-5">
-            <h1>Login</h1>
-            <hr />
+    navigate("/marvel", {
+      replace: true,
+    });
+  };
 
-            <Button className="btn-primary" onClick={ handleLogin }>
-                Login
-            </Button>
-        </div>
-    )
-}
+  return (
+    <div className="container mt-5">
+      <h1>Login</h1>
+      <hr />
 
-export default LoginScreen
+      <Button className="btn-primary" onClick={handleLogin}>
+        Login
+      </Button>
+    </div>
+  );
+};
+
+export default LoginScreen;
